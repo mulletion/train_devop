@@ -1,8 +1,8 @@
 pipeline {
     agent any
-	tools {
-		go 'Golang version 17.3'
-		}
+    tools {
+	go 'Golang version 17.3'
+    }
     stages {
 	stage('compilation') {
 	    steps {
@@ -10,5 +10,9 @@ pipeline {
 	    }
 	}
     }
+    post {
+	always {
+	    archiveArtifacts artifacts: 'synonyms', fingerprint: true
+	}
+    }
 }
-
