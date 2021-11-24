@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-	stage('beginning') {
+	stage('beginning1') {
 	    steps {
-		echo "The first stage is happening"
+		echo "The first stage is happening1"
 		sleep 20
 		echo "The first stage is complete"
 	    }
